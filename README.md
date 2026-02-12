@@ -81,16 +81,15 @@ AI 视频创作助手源于我年初的一个想法, 作为一个喜欢阅读的
 ### 📦 docker 本地一键部署
 0️⃣：安装 `docker`, 这个网上有教程, Windows 玩家建议使用 `wsl` 启动该项目。
 
-1️⃣：镜像构建, 在项目根目录下执行:
-```shell
-$ make docker-image
-```
+1️⃣：下载项目首页的 docker-compose.yaml 文件
+
 2️⃣：参考`variables_template.env` 在项目根目录下生成 `variables.env` 文件。 请根据 [后端部署指引 / 配置项说明](https://github.com/hanshuaikang/AI-Media2Doc/blob/main/backend/README.md#%E5%9C%A8%E7%81%AB%E5%B1%B1%E5%BC%95%E6%93%8E%E8%8E%B7%E5%8F%96%E5%AF%B9%E5%BA%94%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC) 完善 `variables.env` 文件中的环境变量。
+variables.env 必须与 docker-compose.yaml 在同一目录下, 建议建个新的文件夹单独存放这两个文件。
 
-3️⃣：运行项目,在项目根目录下执行:
+3️⃣：运行, 在 docker-compose.yaml 所在目录下运行:
 
 ```shell
-$ make run
+$ docker-compose -f docker-compose.yaml up -d
 ```
 
 
@@ -171,7 +170,9 @@ $ make run
 
 - [throttled-py](https://github.com/ZhuoZhuoCrayon/throttled-py)：✨Python 限流库，合理限制、平滑云资源用量。
 
+### 其他 AI 工具:
+[Owl 猫头鹰小红书/公众号敏感词检测工具](https://owl.hanshutx.com/): 支持小红书、公众号敏感词检测，提交检测后自动识别文本中的敏感词并高亮显示，避免笔记违规, 免费使用。
+
 ### 🌟 Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=hanshuaikang/AI-Media2Doc&type=Date)](https://www.star-history.com/#hanshuaikang/AI-Media2Doc&Date)
-
